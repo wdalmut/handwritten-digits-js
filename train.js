@@ -22,7 +22,7 @@ fs.readdir(trainFolder, (err, files) => {
 
 
     let input = [...fs.readFileSync(trainFolder + "/" + file)]
-      .map((intensity) => (intensity) ? 1 : 0)
+      .map((intensity) => intensity/255)
       //.map((intensity) => intensity/255);
 
     trainSet.push({input: input, output: out(desired)});
@@ -31,7 +31,7 @@ fs.readdir(trainFolder, (err, files) => {
   process.stdout.write("Now we learn\n");
   trainer.train(trainSet, {
     rate: .2,
-    iterations: 80,
+    iterations: 2,
     error: .05,
     shuffle: true,
     log: 1,

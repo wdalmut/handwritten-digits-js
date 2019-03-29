@@ -37,6 +37,6 @@ fs.readdir(testFolder, (err, files) => {
   process.stdout.write("Test complete...\n");
 })
 
-fs.writeFileSync("./network.json", JSON.stringify(network.toJSON()));
+//fs.writeFileSync("./network.json", JSON.stringify(network.toJSON()));
 
 
